@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Customizer</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <div class="container mx-auto py-8">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">AppShowcase Maker</h1>
+
+        <!-- Formulario de Personalización -->
+        <form id="customizeForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <!-- Personalización de Textos -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="productName">Product Name</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="productName" type="text" placeholder="Enter product name">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="mainMessage">Main Message</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="mainMessage" type="text" placeholder="Enter main message">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="subMessage">Sub Message</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="subMessage" type="text" placeholder="Enter sub message">
+            </div>
+
+            <!-- Personalización de Colores -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="bgType">Background Type</label>
+                <select id="bgType" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="solid">Solid Color</option>
+                    <option value="gradient">Gradient</option>
+                </select>
+            </div>
+
+            <div class="mb-4" id="bgColorContainer">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="bgColor">Background Color</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="bgColor" type="color" value="#ffffff">
+            </div>
+
+            <div class="mb-4" id="gradientColorsContainer" style="display: none;">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="gradientStartColor">Gradient Start Color</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="gradientStartColor" type="color" value="#ff7e5f">
+                <label class="block text-gray-700 text-sm font-bold mb-2 mt-4" for="gradientEndColor">Gradient End Color</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="gradientEndColor" type="color" value="#feb47b">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="textColor">Text Color</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="textColor" type="color" value="#000000">
+            </div>
+
+            <!-- Enlaces de Descarga -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="appStoreLink">App Store Link</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="appStoreLink" type="url" placeholder="https://apps.apple.com">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="playStoreLink">Google Play Link</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="playStoreLink" type="url" placeholder="https://play.google.com">
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="twitterLink">Twitter Link (Desactivado)</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="twitterLink" type="url" placeholder="https://twitter.com">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="facebookLink">Facebook Link (Desactivado)</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="facebookLink" type="url" placeholder="https://facebook.com">
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="flex items-center justify-between">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onclick="updatePreview()">
+                    Update Preview
+                </button>
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onclick="downloadTemplate()">
+                    Download Template
+                </button>
+            </div>
+        </form>
+
+        <!-- Vista Previa -->
+        
+</body>
+
+        <!-- Vista Previa -->
+        <div id="preview" class="bg-white p-4 mt-8 rounded shadow-md">
+            <iframe id="previewIframe" class="w-full h-96" src="templates/template.html"></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
